@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Umamalleswara Rao | Netflix Portfolio</title>
+  <meta name="description"
+    content="Cinematic Netflix-themed portfolio for Jonnalagadda Umamalleswara Rao — Flutter Developer, Machine Learning, Deep Learning, and React.js." />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="netflix-dark-theme">
+
+  <!-- ================= 1. "WHO'S WATCHING?" GATEWAY ================= -->
+  <div id="netflix-gate" class="netflix-gate">
+    <header class="gate-topbar">
+      <div class="brand-netflix">
+        <span class="red-n">J</span><span class="brand-name">UMAMALLESWARA RAO</span>
+      </div>
+      <div class="sound-tag">
+        <i class="fa-solid fa-volume-high"></i> <span>TUDUM SOUND READY</span>
+      </div>
+    </header>
+
+    <main class="gate-main">
+      <h1 class="gate-headline">Who's watching?</h1>
+
+      <div class="gate-profiles">
+        <!-- Profile 1: Recruiter Persona -->
+        <div class="gate-profile-card active" data-persona="recruiter" tabindex="0">
+          <div class="profile-box">
+            <img src="uma pic.jpg" alt="Recruiter Lens" class="box-photo" />
+            <div class="profile-glow"></div>
+            <span class="badge-role">Flutter Developer</span>
+          </div>
+          <h3 class="profile-name">Flutter Developer | Technical Trainer</h3>
+          <p class="profile-sub">Skills, Timeline & Fast Resume</p>
+        </div>
+
+        <!-- Profile 2: Tech Lead Persona -->
+        <div class="gate-profile-card" data-persona="techlead" tabindex="0">
+          <div class="profile-box techlead-box">
+            <div class="box-icon-avatar">
+              <i class="fa-solid fa-terminal"></i>
+
+            </div>
+            <div class="profile-glow"></div>
+            <span class="badge-role">ENGINEERING</span>
+          </div>
+          <h3 class="profile-name">Tech Lead</h3>
+          <p class="profile-sub">Architecture, RAG, ML/DL & Code</p>
+        </div>
+
+        <!-- Profile 3: Collaborator Persona -->
+        <div class="gate-profile-card" data-persona="collaborator" tabindex="0">
+          <div class="profile-box collab-box">
+            <div class="box-icon-avatar collab-avatar">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div class="profile-glow"></div>
+            <span class="badge-role">STARTUP / PEER</span>
+          </div>
+          <h3 class="profile-name">Collaborator</h3>
+          <p class="profile-sub">Projects, Research & Innovations</p>
+        </div>
+
+        <!-- Add Profile Slot (Classic Netflix) -->
+        <div class="gate-profile-card add-profile-slot" id="slot-add-profile" tabindex="0">
+          <div class="profile-box add-box">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <h3 class="profile-name">Add Profile</h3>
+          <p class="profile-sub">Custom Persona</p>
+        </div>
+      </div>
+
+      <div class="gate-btn-wrapper">
+        <button id="gate-start-btn" class="netflix-manage-btn">
+          <span>START STREAMING UMA'S WORK</span> <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <!-- ================= 2. CINEMATIC STREAMING DASHBOARD ================= -->
+  <div id="streaming-app" class="streaming-app hidden">
+
+    <!-- Netflix Floating Navbar -->
+    <nav class="netflix-navbar" id="netflix-nav">
+      <div class="nav-left">
+        <a href="#featured-billboard" class="brand-netflix">
+          <span class="red-n">J</span><span class="brand-name">UMAMALLESWARA RAO</span>
+        </a>
+        <ul class="nav-categories">
+          <li><a href="#featured-billboard" class="nav-cat active">Home</a></li>
+          <li><a href="#row-projects" class="nav-cat">Top Projects</a></li>
+          <li><a href="#row-skills" class="nav-cat">Tech Stack</a></li>
+          <li><a href="#row-experience" class="nav-cat">Experience</a></li>
+          <li><a href="#row-research" class="nav-cat">Originals & Research</a></li>
+          <li><a href="#row-education" class="nav-cat">Education</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-right">
+        <div class="search-mini">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="project-filter" placeholder="Search Flutter, RAG, React..." />
+        </div>
+
+        <button id="switch-who-watching" class="profile-pill-netflix" title="Switch Persona">
+          <img src="uma pic.jpg" alt="Persona" class="pill-avatar" />
+          <span id="current-persona-badge">Recruiter</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <a href="https://www.linkedin.com/in/umamalleswara-rao-jonnalagadda-429290232/" target="_blank"
+          rel="noopener noreferrer" class="netflix-social-icon" title="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Billboard Hero Section (Netflix Cinematic Trailer Banner) -->
+    <header class="billboard" id="featured-billboard">
+      <div class="billboard-backdrop">
+        <div class="billboard-gradient-overlay"></div>
+        <div class="billboard-vignette"></div>
+      </div>
+
+      <div class="billboard-content">
+        <div class="billboard-badge">
+          <span class="top10-badge"><span class="top10-n">#1</span> IN CANDIDATES TODAY</span>
+          <span class="match-score">99% Match for Flutter & AI Roles</span>
+        </div>
+
+        <h1 class="billboard-title">
+          JONNALAGADDA <br /><span class="text-glow">UMAMALLESWARA RAO</span>
+        </h1>
+
+        <div class="billboard-meta">
+          <span class="tag-age">2026 RELEASE</span>
+          <span class="tag-seasons">M.Sc. CS • 80%</span>
+          <span class="tag-hd">ULTRA HD</span>
+          <span class="tag-genre">Flutter • RAG AI • Machine Learning • React.js</span>
+        </div>
+
+        <p class="billboard-synopsis">
+          A high-performance engineer blending responsive cross-platform Flutter application engineering, generative AI
+          RAG architectures with FAISS vector search, and deep learning classification systems.
+        </p>
+
+        <div class="billboard-actions">
+          <button class="btn-netflix-play" id="btn-open-featured">
+            <i class="fa-solid fa-play"></i> <span>Explore Featured Work</span>
+          </button>
+          <a href="Resume.docx" download class="btn-netflix-info" id="btn-download-resume">
+            <i class="fa-solid fa-circle-down"></i> <span>Download Resume</span>
+          </a>
+          <a href="https://www.linkedin.com/in/umamalleswara-rao-jonnalagadda-429290232/" target="_blank"
+            rel="noopener noreferrer" class="btn-netflix-linkedin">
+            <i class="fa-brands fa-linkedin"></i> <span>LinkedIn Profile</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= HORIZONTAL CATEGORY SLIDERS ================= -->
+    <main class="netflix-rows-container">
+
+      <!-- ROW 1: TOP 10 FEATURED PROJECTS -->
+      <section class="slider-row" id="row-projects">
+        <div class="row-header">
+          <h2 class="row-title">Top Rated Projects <span class="row-hint">Swipe or Click to Preview</span></h2>
+        </div>
+        <div class="cards-carousel" id="carousel-projects">
+          <!-- Dynamically Injected via script.js -->
+        </div>
+      </section>
+
+      <!-- ROW 2: TECHNICAL SKILLS & STACK -->
+      <section class="slider-row" id="row-skills">
+        <div class="row-header">
+          <h2 class="row-title">Trending Tech Stack <span class="row-sub">Mobile, AI & Full Stack</span></h2>
+        </div>
+        <div class="cards-carousel" id="carousel-skills">
+          <!-- Dynamically Injected via script.js -->
+        </div>
+      </section>
+
+      <!-- ROW 3: CAREER HISTORY & WORK EXPERIENCE -->
+      <section class="slider-row" id="row-experience">
+        <div class="row-header">
+          <h2 class="row-title">Production Experience <span class="row-sub">Commercial & Industry Work</span></h2>
+        </div>
+        <div class="cards-carousel" id="carousel-experience">
+          <!-- Dynamically Injected via script.js -->
+        </div>
+      </section>
+
+      <!-- ROW 4: ORIGINALS & RESEARCH PUBLICATIONS -->
+      <section class="slider-row" id="row-research">
+        <div class="row-header">
+          <h2 class="row-title">Umaflix Originals <span class="row-sub">Scientific Research & Inventions</span></h2>
+        </div>
+        <div class="cards-carousel" id="carousel-research">
+          <!-- Dynamically Injected via script.js -->
+        </div>
+      </section>
+
+      <!-- ROW 5: EDUCATION & CERTIFICATIONS -->
+      <section class="slider-row" id="row-education">
+        <div class="row-header">
+          <h2 class="row-title">Academic Episodes <span class="row-sub">Degrees & Cisco/NPTEL Credentials</span></h2>
+        </div>
+        <div class="cards-carousel" id="carousel-education">
+          <!-- Dynamically Injected via script.js -->
+        </div>
+      </section>
+
+      <!-- STREAMING CONTACT CALL-OUT -->
+      <section class="netflix-contact-banner glass-card" id="contact-banner">
+        <div class="contact-banner-content">
+          <span class="contact-tag"><i class="fa-solid fa-satellite-dish"></i> READY FOR LIVE SESSIONS</span>
+          <h2>Connect with Jonnalagadda Umamalleswara Rao</h2>
+          <p>Available for Full-Time Flutter Developer roles, Machine Learning Engineering positions, and high-impact
+            software projects.</p>
+
+          <div class="contact-chips-row">
+            <a href="mailto:umamalleswararaojonnalagadda55@gmail.com" class="c-chip">
+              <i class="fa-solid fa-envelope"></i> <span>umamalleswararaojonnalagadda55@gmail.com</span>
+            </a>
+            <a href="tel:+919985340375" class="c-chip">
+              <i class="fa-solid fa-phone"></i> <span>+91 9985340375</span>
+            </a>
+            <a href="https://www.linkedin.com/in/umamalleswara-rao-jonnalagadda-429290232/" target="_blank"
+              rel="noopener noreferrer" class="c-chip linkedin-chip">
+              <i class="fa-brands fa-linkedin"></i> <span>LinkedIn Profile</span>
+            </a>
+            <div class="c-chip">
+              <i class="fa-solid fa-location-dot"></i> <span>Vijayawada, Andhra Pradesh, India (520007)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Netflix Footer -->
+    <footer class="netflix-footer">
+      <div class="footer-inner">
+        <p class="footer-title">Questions? Call <a href="tel:+919985340375">+91 9985340375</a></p>
+        <div class="footer-cols">
+          <button id="footer-switch-persona" class="footer-link-btn">Switch Persona</button>
+          <a href="Resume.docx" download class="footer-link">Download Resume</a>
+          <a href="https://www.linkedin.com/in/umamalleswara-rao-jonnalagadda-429290232/" target="_blank"
+            rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+          <a href="#featured-billboard" class="footer-link">Back to Top</a>
+        </div>
+        <p class="footer-copy">© 2026 Jonnalagadda Umamalleswara Rao. Built with Netflix-inspired cinematic UX.</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ================= 3. IN-PAGE TITLE VIEWER MODAL (NETFLIX POPUP) ================= -->
+  <div id="netflix-modal" class="netflix-modal hidden">
+    <div class="modal-backdrop" id="modal-backdrop-close"></div>
+    <div class="modal-dialog glass-card">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Preview">&times;</button>
+
+      <div class="modal-banner" id="modal-banner">
+        <div class="modal-banner-overlay"></div>
+        <div class="modal-banner-badge" id="modal-badge">FLUTTER ORIGINAL</div>
+        <h2 class="modal-title" id="modal-title">Project Title</h2>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-left">
+          <div class="modal-meta-row">
+            <span class="match-score" id="modal-match">98% Match</span>
+            <span class="tag-age" id="modal-year">2026</span>
+            <span class="tag-hd" id="modal-hd">FULL HD</span>
+            <span class="tech-pill-highlight" id="modal-category">Mobile Engineering</span>
+          </div>
+          <p class="modal-description" id="modal-desc"></p>
+
+          <h4 class="modal-subheading">Key Highlights & Implementation</h4>
+          <ul class="modal-bullets" id="modal-bullets"></ul>
+        </div>
+
+        <div class="modal-right">
+          <div class="modal-info-block">
+            <span class="info-label">Technologies:</span>
+            <div class="info-tags" id="modal-tags"></div>
+          </div>
+
+          <div class="modal-info-block">
+            <span class="info-label">Candidate Role:</span>
+            <span class="info-val" id="modal-role">Lead Developer / Architect</span>
+          </div>
+
+          <div class="modal-actions-box" id="modal-action-box">
+            <!-- Dynamic button -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
